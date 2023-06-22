@@ -25,9 +25,9 @@ func main() {
 	go client1(c1)
 	go client2(c2)
 
-	maxEmpty := 10
-	currEmpty := 0
-	for currEmpty <= maxEmpty {
+	// maxEmpty := 10
+	// currEmpty := 0
+	for {
 		time.Sleep(1000 * time.Millisecond)
 		select {
 		case v := <-c1:
@@ -38,7 +38,7 @@ func main() {
 		// This is due to the non-blocking behavior of select {} with a default case
 		default:
 			fmt.Println("No value received")
-			currEmpty++
+			//currEmpty++
 		}
 	}
 }

@@ -14,6 +14,6 @@ func main() {
 	fmt.Println("Starting first operation")
 	go LongOperation(1)
 
-	fmt.Println("Starting second operation")
+	fmt.Println("Startigooperation")
 	LongOperation(1)
 }

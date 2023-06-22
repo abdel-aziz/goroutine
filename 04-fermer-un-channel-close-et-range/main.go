@@ -21,7 +21,7 @@ func main() {
 	c <- "Alice"
 	fmt.Println("Closing channel")
 	close(c)
-	// c <- "Bobette" // panic, send on a closed channel
+	c <- "Bobette" // panic, send on a closed channel
 
-	time.Sleep(5 * time.Second)
+	time.Sleep(3 * time.Second)
 }

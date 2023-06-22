@@ -2,18 +2,21 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
-func longOperation(done chan<- bool) {
-	fmt.Printf("Started long operation...")
-	time.Sleep(2 * time.Second)
+func operation() {
+
 	fmt.Println("Done!")
-	done <- true
+
 }
 func main() {
-	done := make(chan bool)
-	go longOperation(done)
-	<-done
+
 	fmt.Println("Back to main")
+	fmt.Println("Back to main1")
+
+	defer operation()
+
+	fmt.Println("Back to main3")
+	fmt.Println("Back to main4")
+
 }

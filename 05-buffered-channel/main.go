@@ -6,8 +6,9 @@ import (
 )
 
 func write(c chan string) {
-	// names := []string{"Bob", "Alice", "Bobette", "John"} // 4th element can be written only when a slot is free in the channel!
-	names := []string{"Bob", "Alice", "Bobette"}
+	names := []string{"Bob", "Alice", "Bobette", "John"}
+	// 4th element can be written only when a slot is free in the channel!
+	//names := []string{"Bob", "Alice", "Bobette"}
 	for _, n := range names {
 		c <- n
 		fmt.Printf("Wrote %v to channel (len=%v)\n", n, len(c))
